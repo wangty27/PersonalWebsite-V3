@@ -1,6 +1,6 @@
 # Personal Website V3
 
-* Front-end Tech Stack: React | Bootstrap 4 | Axios
+* Front-end Tech Stack: React | Bootstrap 4
 * Back-end Tech Stack: Node.js | Express.js | Nodemailer
 * In Progress
 
