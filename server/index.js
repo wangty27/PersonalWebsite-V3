@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
-app.listen('3000', () => {
-  console.log('Listening on PORT 3000');
+app.use('/static', express.static('static'));
+
+app.listen('8080', () => {
+	console.log('Listening on PORT 8080');
 });
