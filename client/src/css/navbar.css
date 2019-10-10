@@ -1,0 +1,35 @@
+#navbar {
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.bg-black {
+	background-color: #282828 !important;
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+	color: rgba(255, 255, 255, .6);
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+.navbar-expand-md .navbar-nav .nav-link:hover {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.logo {
+	height: 50px;
+	width: 50px;
+}
+
+@media (min-width: 768px) {
+	.navbar-expand-md .navbar-nav .nav-link {
+		padding-left: .8rem;
+		padding-right: .8rem;
+		font-size: 1.1rem;
+	}
+}
