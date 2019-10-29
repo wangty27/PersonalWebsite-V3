@@ -6,6 +6,7 @@ import '../css/navbar.css';
 
 export default class NavBar extends Component {
 	state = { isOpen: false, transparent: true };
+	scroller = Scroll.scroller;
 
 	componentDidUpdate() {
 		console.log(this.state);
@@ -22,8 +23,6 @@ export default class NavBar extends Component {
 	}
 
 	componentDidMount() {
-		this.scroller = Scroll.scroller;
-
 		window.addEventListener('scroll', () => {
 			const scrollPos = document.body.scrollTop || document.documentElement.scrollTop;
 			if (scrollPos > 200 && this.state.transparent !== false) {

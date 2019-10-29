@@ -1,29 +1,52 @@
 {
-	"name": "server",
-	"version": "0.1.0",
-	"description": "",
-	"main": "index.js",
+	"name": "personal-site",
+	"version": "1.0.0",
+	"description": "Personal Website",
+	"main": "build/src/index.js",
 	"scripts": {
-		"start": "node index.js",
-		"build": "npm run build --prefix client",
+		"start": "node .",
+		"dev": "concurrently \"npm run dev-client\" \"npm run dev-server\"",
 		"dev-client": "npm start --prefix client",
-		"dev-server": "nodemon index.js",
-		"pm2": "NODE_ENV=production pm2 start index.js --name personal-site"
+		"dev-server": "nodemon",
+		"build": "npm run build-server && npm run build-client",
+		"build-client": "rimraf build/client && npm run build --prefix client && copyfiles client/build/** build/",
+		"build-server": "tsc -p .",
+		"clean": "gts clean",
+		"check": "gts check",
+		"fix": "gts fix"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/wtyanan/PersonalWebsite-V3.git"
 	},
+	"keywords": [ "Personal Website" ],
 	"author": "Terry Wang",
-	"license": "MIT",
+	"license": "Apache-2.0",
+	"licenses": [
+		{
+			"type": "Apache-2.0",
+			"url": "http://www.apache.org/licenses/LICENSE-2.0"
+		}
+	],
 	"bugs": {
 		"url": "https://github.com/wtyanan/PersonalWebsite-V3/issues"
 	},
 	"homepage": "https://github.com/wtyanan/PersonalWebsite-V3#readme",
 	"dependencies": {
-		"express": "^4.16.4"
+		"dotenv": "^8.2.0",
+		"express": "^4.17.1"
 	},
 	"devDependencies": {
-		"nodemon": "^1.19.3"
+		"@types/express": "^4.17.1",
+		"@types/node": "^12.11.7",
+		"concurrently": "^5.0.0",
+		"copyfiles": "^2.1.1",
+		"cors": "^2.8.5",
+		"gts": "^1.1.0",
+		"nodemon": "^1.19.4",
+		"rimraf": "^3.0.0",
+		"ts-node": "^8.4.1",
+		"tslint": "^5.20.0",
+		"typescript": "^3.6.4"
 	}
 }
