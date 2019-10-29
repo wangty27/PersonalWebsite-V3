@@ -4,7 +4,11 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "nodemon index.js"
+		"start": "node index.js",
+		"build": "npm run build --prefix client",
+		"dev-client": "npm start --prefix client",
+		"dev-server": "nodemon index.js",
+		"pm2": "NODE_ENV=production pm2 start index.js --name personal-site"
 	},
 	"repository": {
 		"type": "git",

@@ -59,7 +59,7 @@ export default class NavBar extends Component {
 				>
 					<Container>
 						<NavbarBrand href='#home'>
-							<img className='logo' src={'http://localhost:8080/static/images/logo.png'} alt='logo' />
+							<img className='logo' src='/images/logo.png' alt='logo' />
 						</NavbarBrand>
 						<NavbarToggler onClick={this.toggle} />
 						<Collapse isOpen={this.state.isOpen} navbar>

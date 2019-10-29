@@ -10,19 +10,19 @@ class App extends Component {
 		return (
 			<React.Fragment>
 				<NavBar />
-				<Element name='home' style={{ height: '100vh', background: 'black', paddingTop: '100px' }}>
+				<Element name='home' style={{ height: '100vh', paddingTop: '100px' }}>
 					<h1 style={{ color: 'white' }}>Home</h1>
 				</Element>
-				<Element name='about' style={{ height: '100vh', background: 'black', paddingTop: '100px' }}>
+				<Element name='about' style={{ height: '100vh', paddingTop: '100px' }}>
 					<h1 style={{ color: 'white' }}>about</h1>
 				</Element>
-				<Element name='experience' style={{ height: '100vh', background: 'black', paddingTop: '100px' }}>
+				<Element name='experience' style={{ height: '100vh', paddingTop: '100px' }}>
 					<h1 style={{ color: 'white' }}>experience</h1>
 				</Element>
-				<Element name='projects' style={{ height: '100vh', background: 'black', paddingTop: '100px' }}>
+				<Element name='projects' style={{ height: '100vh', paddingTop: '100px' }}>
 					<h1 style={{ color: 'white' }}>projects</h1>
 				</Element>
-				<Element name='contact' style={{ height: '100vh', background: 'black', paddingTop: '100px' }}>
+				<Element name='contact' style={{ height: '100vh', paddingTop: '100px' }}>
 					<h1 style={{ color: 'white' }}>contact</h1>
 				</Element>
 			</React.Fragment>
