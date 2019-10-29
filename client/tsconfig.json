@@ -1,4 +1,8 @@
 {
+  "extends": "./tsconfig.compiler.json",
+  "include": [
+    "src"
+  ],
   "compilerOptions": {
     "target": "es5",
     "lib": [
@@ -7,9 +11,6 @@
       "esnext"
     ],
     "baseUrl": ".",
-    "paths": {
-      "*": ["typings/*"]
-    },
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -22,8 +23,5 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react"
-  },
-  "include": [
-    "src"
-  ]
+  }
 }
