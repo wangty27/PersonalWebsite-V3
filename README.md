@@ -1,7 +1,7 @@
 # Personal Website V3
 
 * Language: Typescript
-* Front-end Tech Stack: React | Redux | Reactstrap(Bootstrap 4)
+* Front-end Tech Stack: React | Redux | react-bootstrap (Bootstrap 4)
 * Back-end Tech Stack: Node.js | Express.js | Passport.js | Nodemailer
 * **Under Development**
 <!-- * Hosted on Digital Ocean with NGINX as a reverse proxy -->
