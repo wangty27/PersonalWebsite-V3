@@ -1,5 +1,5 @@
 {
-  "extends": "./tsconfig.compiler.json",
+  "extends": "./tsconfig.paths.json",
   "include": [
     "src"
   ],
@@ -11,6 +11,7 @@
       "esnext"
     ],
     "baseUrl": ".",
+    "noImplicitAny": false,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
