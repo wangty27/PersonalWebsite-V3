@@ -7,6 +7,15 @@ const app = express();
 
 app.use('/static', express.static('static'));
 
+if (process.env.NODE_ENV !== 'production') {
+	console.log('In development, using cors');
+	const cors = require('cors');
+	app.use(cors());
+}
+
+import homeRoutes from './routes/homeRoutes';
+homeRoutes(app);
+
 var FRONT_END_PATH: string = path.resolve(__dirname, 'client', 'build');
 if (process.env.NODE_ENV !== 'production') {
 	FRONT_END_PATH = path.resolve(__dirname, '..', 'client', 'build');
