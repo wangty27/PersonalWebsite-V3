@@ -5,8 +5,8 @@
 	position: fixed;
 	bottom: 0;
 	right: 0;
-	margin-right: 30px;
-	margin-bottom: 30px;
+	margin-right: 15px;
+	margin-bottom: 15px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -26,4 +26,11 @@
 	-ms-transform: rotate(180deg);
 	-o-transform: rotate(180deg);
 	transform: rotate(180deg);
+}
+
+@media (min-width: 768px) {
+	.to-top-btn {
+		margin-right: 30px;
+		margin-bottom: 30px;
+	}
 }

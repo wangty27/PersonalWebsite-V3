@@ -33,7 +33,7 @@ class ToTop extends Component {
 						smooth: 'easeInOutQuint'
 					})}
 			>
-				<img src='/images/double-arrow-down.png' className='to-top-img' />
+				<img src='/images/double-arrow-down.png' className='to-top-img' alt='top' />
 			</div>
 		) : (
 			''
