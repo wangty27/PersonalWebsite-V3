@@ -13,6 +13,9 @@ if (process.env.NODE_ENV !== 'production') {
 	app.use(cors());
 }
 
+import adminRoutes from './routes/adminRoutes';
+adminRoutes(app);
+
 import homeRoutes from './routes/homeRoutes';
 homeRoutes(app);
 
