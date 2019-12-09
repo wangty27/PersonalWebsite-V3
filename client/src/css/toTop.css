@@ -1,0 +1,29 @@
+.to-top-btn {
+	background: rgba(0, 0, 0, 0.45);
+	height: 40px;
+	width: 40px;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin-right: 30px;
+	margin-bottom: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: 500ms;
+}
+
+.to-top-btn:hover {
+	opacity: 0.8;
+}
+
+.to-top-img {
+	height: 15px;
+	width: 15px;
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
