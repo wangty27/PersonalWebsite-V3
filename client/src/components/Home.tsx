@@ -8,8 +8,8 @@ import '../css/home.css';
 import * as actions from '../actions';
 
 type Props = {
-	fetchHome: any;
-	home: any;
+	fetchHome: Function;
+	home: string[];
 };
 
 class Home extends Component<Props> {
@@ -25,10 +25,10 @@ class Home extends Component<Props> {
 			typedStrings = this.props.home;
 		}
 		return (
-			<div className='home-wrapper'>
+			<section className='home-wrapper'>
 				<div className='home-mask'>
 					<div className='d-flex justify-content-center align-items-center flex-column h-100 w-100 text-white'>
-						<h1 className='home-title'>Hello World, I'm Terry Wang</h1>
+						<div className='home-title'>Hello World, I'm Terry Wang</div>
 						<Typed
 							className='home-identity'
 							strings={typedStrings}
@@ -48,7 +48,7 @@ class Home extends Component<Props> {
 						/>
 					</div>
 				</div>
-			</div>
+			</section>
 		);
 	}
 }

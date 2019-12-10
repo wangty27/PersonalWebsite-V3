@@ -14,3 +14,11 @@ export const fetchHome = () => (dispatch: any) => {
 		}
 	});
 };
+
+export const fetchAbout = () => (dispatch: any) => {
+	axios.get(`${serverAddress}/api/about`).then(response => {
+		if (response.status === 200) {
+			dispatch({ type: TYPES.FETCH_ABOUT, payload: response.data });
+		}
+	});
+};

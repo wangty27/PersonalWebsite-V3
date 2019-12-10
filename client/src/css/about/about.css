@@ -1,0 +1,40 @@
+.about-wrapper {
+	width: 100%;
+	padding-top: 90px;
+	padding-bottom: 90px;
+	color: #e0e0e0;
+}
+
+.about-portrait {
+	width: 280px;
+	margin: auto;
+	border: 3px solid #ffd54f;
+	border-radius: 50%;
+	margin-bottom: 50px;
+}
+
+.about-resume {
+	color: #ffd54f;
+	font-weight: 700;
+	text-decoration: underline;
+}
+
+.about-resume:hover {
+	color: #ffd54f;
+	opacity: 0.8;
+}
+
+.about-portrait-img {
+	border-radius: 50%;
+}
+
+.about-wrapper h5 {
+	font-weight: 780;
+	color: #fff;
+}
+
+@media (min-width: 576px) {
+	.about-portrait {
+		width: 320px;
+	}
+}

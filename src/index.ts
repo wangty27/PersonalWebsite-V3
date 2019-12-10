@@ -19,6 +19,9 @@ adminRoutes(app);
 import homeRoutes from './routes/homeRoutes';
 homeRoutes(app);
 
+import aboutRoutes from './routes/aboutRoutes';
+aboutRoutes(app);
+
 var FRONT_END_PATH: string = path.resolve(__dirname, 'client', 'build');
 if (process.env.NODE_ENV !== 'production') {
 	FRONT_END_PATH = path.resolve(__dirname, '..', 'client', 'build');

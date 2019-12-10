@@ -1,0 +1,33 @@
+.gap {
+	height: 25vh;
+	width: 100%;
+}
+
+.gap-1 {
+	background-image: url('/images/gap-1.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.gap-2 {
+	background-image: url('/images/gap-2.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.mask {
+	height: inherit;
+	width: inherit;
+	background: rgba(255, 213, 79, 0.35);
+}
+@media (min-width: 1200px) {
+	.gap-1 {
+		background-attachment: fixed;
+	}
+
+	.gap-2 {
+		background-attachment: fixed;
+	}
+}

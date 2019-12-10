@@ -113,10 +113,6 @@
 		font-size: 38px;
 	}
 
-	.home-wrapper {
-		background-attachment: fixed;
-	}
-
 	.home-go-down {
 		height: 30px;
 		width: 30px;
@@ -150,5 +146,9 @@
 	.home-go-down {
 		height: 35px;
 		width: 35px;
+	}
+
+	.home-wrapper {
+		background-attachment: fixed;
 	}
 }

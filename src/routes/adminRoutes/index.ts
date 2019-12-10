@@ -1,8 +1,8 @@
 import * as fs from 'fs';
 import { join } from 'path';
 
-const homeDataFileDir: string = join(__dirname, '..', 'data');
-const homeDataFilePath: string = join(__dirname, '..', 'data', 'home.json');
+const homeDataFileDir: string = join(__dirname, '..', '..', 'data');
+const homeDataFilePath: string = join(__dirname, '..', '..', 'data', 'home.json');
 
 fs.access(homeDataFileDir, fs.constants.F_OK, err => {
 	if (err) {
