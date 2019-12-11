@@ -53,7 +53,7 @@ class Home extends Component<Props> {
 	}
 }
 
-function mapStateToProps(state: any) {
+function mapStateToProps(state: { home: string[] }) {
 	return {
 		home: state.home
 	};

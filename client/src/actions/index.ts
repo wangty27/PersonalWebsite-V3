@@ -7,7 +7,7 @@ if (process.env.NODE_ENV === 'production') {
 	serverAddress = '';
 }
 
-export const fetchHome = () => (dispatch: any) => {
+export const fetchHome: Function = () => (dispatch: Function) => {
 	axios.get(`${serverAddress}/api/home`).then(response => {
 		if (response.status === 200) {
 			dispatch({ type: TYPES.FETCH_HOME, payload: response.data });
@@ -15,10 +15,18 @@ export const fetchHome = () => (dispatch: any) => {
 	});
 };
 
-export const fetchAbout = () => (dispatch: any) => {
+export const fetchAbout: Function = () => (dispatch: Function) => {
 	axios.get(`${serverAddress}/api/about`).then(response => {
 		if (response.status === 200) {
 			dispatch({ type: TYPES.FETCH_ABOUT, payload: response.data });
+		}
+	});
+};
+
+export const fetchExperience: Function = () => (dispatch: Function) => {
+	axios.get(`${serverAddress}/api/experience`).then(response => {
+		if (response.status === 200) {
+			dispatch({ type: TYPES.FETCH_EXPERIENCE, payload: response.data });
 		}
 	});
 };

@@ -1,0 +1,48 @@
+.experience-wrapper {
+	width: 100%;
+	padding-top: 90px;
+	padding-bottom: 90px;
+	color: #e0e0e0;
+}
+
+.experience-path-line {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 6.5fr;
+	grid-template-rows: auto;
+	grid-template-areas: "m l" "m r";
+}
+
+.experience-path-line-l {
+	grid-area: l;
+}
+
+.experience-path-line-m {
+	grid-area: m;
+	display: flex;
+	justify-content: center;
+}
+
+.experience-path-line-r {
+	grid-area: r;
+}
+
+.experience-path-line-head {
+	width: 3px;
+	height: 50px;
+	background-image: linear-gradient(#232323 10%, #ffd54f 90%);
+}
+
+.experience-path-line-tail {
+	width: 3px;
+	height: 50px;
+	background-image: linear-gradient(#ffd54f 10%, #232323 90%);
+}
+
+@media (min-width: 768px) {
+	.experience-path-line {
+		grid-template-columns: 10fr 1fr 10fr;
+		grid-template-rows: auto;
+		grid-template-areas: "l m r";
+	}
+}

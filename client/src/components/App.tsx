@@ -3,9 +3,10 @@ import Scroll from 'react-scroll';
 
 import NavBar from './NavBar';
 import ToTop from './ToTop';
-import Home from './Home';
-import About from './About/About';
 import Gap from './Gap';
+import Home from './Home';
+import About from './about/About';
+import Experience from './experience/Experience';
 
 var Element = Scroll.Element;
 
@@ -21,9 +22,10 @@ class App extends Component {
 					<About />
 				</Element>
 				<Gap number={1} />
-				<Element id='experience' name='experience' style={{ height: '100vh', paddingTop: '100px' }}>
-					<h1 style={{ color: 'white' }}>experience</h1>
+				<Element id='experience' name='experience'>
+					<Experience />
 				</Element>
+				<Gap number={2} />
 				<Element id='projects' name='projects' style={{ height: '100vh', paddingTop: '100px' }}>
 					<h1 style={{ color: 'white' }}>projects</h1>
 				</Element>

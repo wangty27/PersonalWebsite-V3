@@ -9,15 +9,17 @@ import * as actions from '../../actions';
 import SectionTitle from '../SectionTitle';
 import AboutSkill from './AboutSkill';
 
+type AboutProps = {
+	description: string;
+	keywords: string[];
+	skills: Array<{ name: string; confidence: number; color: string }>;
+	resume: string;
+	portrait: string;
+};
+
 type Props = {
 	fetchAbout: Function;
-	about: {
-		description: string;
-		keywords: string[];
-		skills: Array<{ name: string; confidence: number; color: string }>;
-		resume: string;
-		portrait: string;
-	};
+	about: AboutProps;
 };
 
 class About extends Component<Props> {
@@ -67,7 +69,7 @@ class About extends Component<Props> {
 	}
 }
 
-function mapStateToProps(state: any) {
+function mapStateToProps(state: { about: AboutProps }) {
 	return {
 		about: state.about
 	};
