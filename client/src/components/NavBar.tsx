@@ -13,7 +13,31 @@ export default class NavBar extends Component {
 	projectsPos: number = 1;
 	contactPos: number = 1;
 
+	updateElementOffset() {
+		var newHomePos: number = document.getElementById('home')!.offsetTop;
+		var newAboutPos: number = document.getElementById('about')!.offsetTop;
+		var newExperiencePos: number = document.getElementById('experience')!.offsetTop;
+		var newProjectsPos: number = document.getElementById('projects')!.offsetTop;
+		var newContactPos: number = document.getElementById('contact')!.offsetTop;
+		if (
+			this.homePos !== newHomePos ||
+			this.aboutPos !== newAboutPos ||
+			this.experiencePos !== newExperiencePos ||
+			this.projectsPos !== newProjectsPos ||
+			this.contactPos !== newContactPos
+		) {
+			this.homePos = newHomePos;
+			this.aboutPos = newAboutPos;
+			this.experiencePos = newExperiencePos;
+			this.projectsPos = newProjectsPos;
+			this.contactPos = newContactPos;
+			const scrollPos: number = document.body.scrollTop || document.documentElement.scrollTop;
+			this.setState({ scrollPos });
+		}
+	}
+
 	componentDidUpdate() {
+		this.updateElementOffset();
 		if (this.state.isOpen === true && this.state.transparent === true) {
 			this.setState({
 				transparent: false
@@ -26,11 +50,6 @@ export default class NavBar extends Component {
 	}
 
 	componentDidMount() {
-		this.homePos = document.getElementById('home')!.offsetTop;
-		this.aboutPos = document.getElementById('about')!.offsetTop;
-		this.experiencePos = document.getElementById('experience')!.offsetTop;
-		this.projectsPos = document.getElementById('projects')!.offsetTop;
-		this.contactPos = document.getElementById('contact')!.offsetTop;
 		window.addEventListener('scroll', () => {
 			const scrollPos: number = document.body.scrollTop || document.documentElement.scrollTop;
 			this.setState({ scrollPos });
@@ -47,6 +66,7 @@ export default class NavBar extends Component {
 			this.experiencePos = document.getElementById('experience')!.offsetTop;
 			this.projectsPos = document.getElementById('projects')!.offsetTop;
 			this.contactPos = document.getElementById('contact')!.offsetTop;
+			console.log(this.homePos, this.aboutPos, this.experiencePos, this.projectsPos, this.contactPos);
 			if (window.innerWidth > 768) {
 				this.setState({ isOpen: false });
 			}
