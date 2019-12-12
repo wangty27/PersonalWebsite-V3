@@ -44,9 +44,9 @@ class Home extends Component<Props> {
 								<Typed
 									className='home-identity'
 									strings={typedStrings}
-									typeSpeed={80}
-									backSpeed={50}
-									backDelay={1750}
+									typeSpeed={70}
+									backSpeed={30}
+									backDelay={1500}
 									smartBackspace={false}
 									loop
 								/>
