@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Typed from 'react-typed';
 import Scroll from 'react-scroll';
+import VisibilitySensor from 'react-visibility-sensor';
 
 import '../css/home.css';
 
@@ -12,11 +13,20 @@ type Props = {
 	home: string[];
 };
 
+type State = {
+	isVisible: boolean;
+};
+
 class Home extends Component<Props> {
+	state = { isVisible: false };
 	scroller = Scroll.scroller;
 
 	componentDidMount() {
 		this.props.fetchHome();
+	}
+
+	onVisibilityChange(isVisible: boolean) {
+		this.setState({ isVisible });
 	}
 
 	render() {
@@ -27,26 +37,33 @@ class Home extends Component<Props> {
 		return (
 			<section className='home-wrapper'>
 				<div className='home-mask'>
-					<div className='d-flex justify-content-center align-items-center flex-column h-100 w-100 text-white'>
-						<div className='home-title'>Hello World, I'm Terry Wang</div>
-						<Typed
-							className='home-identity'
-							strings={typedStrings}
-							typeSpeed={80}
-							backSpeed={50}
-							backDelay={1750}
-							smartBackspace={false}
-							loop
-						/>
-						<div
-							className='home-go-down'
-							onClick={() =>
-								this.scroller.scrollTo('about', {
-									duration: 1000,
-									smooth: 'easeInOutQuint'
-								})}
-						/>
-					</div>
+					<VisibilitySensor onChange={this.onVisibilityChange.bind(this)} partialVisibility>
+						<div className='d-flex justify-content-center align-items-center flex-column h-100 w-100 text-white'>
+							<div className='home-title'>Hello World, I'm Terry Wang</div>
+							{this.state.isVisible ? (
+								<Typed
+									className='home-identity'
+									strings={typedStrings}
+									typeSpeed={80}
+									backSpeed={50}
+									backDelay={1750}
+									smartBackspace={false}
+									loop
+								/>
+							) : (
+								<div />
+							)}
+
+							<div
+								className='home-go-down'
+								onClick={() =>
+									this.scroller.scrollTo('about', {
+										duration: 1000,
+										smooth: 'easeInOutQuint'
+									})}
+							/>
+						</div>
+					</VisibilitySensor>
 				</div>
 			</section>
 		);
