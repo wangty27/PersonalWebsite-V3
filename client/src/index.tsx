@@ -6,6 +6,7 @@ import reduxThunk from 'redux-thunk';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'material-icons/iconfont/material-icons.css';
+import 'animate.css/animate.min.css';
 import './index.css';
 
 import './index.css';

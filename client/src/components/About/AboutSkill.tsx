@@ -1,5 +1,5 @@
-import React from 'react';
-import { Fade } from 'react-reveal';
+import React, { Component } from 'react';
+import VisibilitySensor from 'react-visibility-sensor';
 
 import '../../css/about/aboutSkill.css';
 
@@ -9,20 +9,39 @@ type Props = {
 	color: string;
 };
 
-function AboutSkill(props: Props) {
-	return (
-		<Fade bottom>
-			<div className='skill-wrapper'>
-				<div className='skill-name-background' style={{ background: props.color }}>
-					<div className='skill-name-text'>{props.name}</div>
+type State = {
+	init: boolean;
+};
+
+class AboutSkill extends Component<Props, State> {
+	state = { init: false };
+
+	onVisibilityChange(isVisible: boolean) {
+		if (!this.state.init && isVisible) {
+			this.setState({ init: true });
+		}
+	}
+
+	render() {
+		return (
+			<VisibilitySensor onChange={this.onVisibilityChange.bind(this)} partialVisibility>
+				<div className={this.state.init ? 'animated fadeInUp' : 'invisible'}>
+					<div className='skill-wrapper'>
+						<div className='skill-name-background' style={{ background: this.props.color }}>
+							<div className='skill-name-text'>{this.props.name}</div>
+						</div>
+						<div className='skill-confidence'>
+							<div
+								className='skill-confidence-bar'
+								style={{ background: this.props.color, width: `${this.props.confidence}%` }}
+							/>
+						</div>
+						<div className='skill-confidence-number'>{this.props.confidence}%</div>
+					</div>
 				</div>
-				<div className='skill-confidence'>
-					<div className='skill-confidence-bar' style={{ background: props.color, width: `${props.confidence}%` }} />
-				</div>
-				<div className='skill-confidence-number'>{props.confidence}%</div>
-			</div>
-		</Fade>
-	);
+			</VisibilitySensor>
+		);
+	}
 }
 
 export default AboutSkill;
