@@ -21,7 +21,6 @@ class ExperienceSingle extends Component<Props, State> {
 	state = { init: false, windowWidth: 0 };
 
 	onVisibilityChange(isVisible: boolean) {
-		console.log(isVisible);
 		if (!this.state.init && isVisible) {
 			this.setState({ init: true });
 		}

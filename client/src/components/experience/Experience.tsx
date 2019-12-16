@@ -29,7 +29,6 @@ class Experience extends Component<Props> {
 	}
 
 	render() {
-		console.log(this.props);
 		if (this.props.experience) {
 			return (
 				<section className='experience-wrapper'>
