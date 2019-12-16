@@ -108,3 +108,7 @@ build/
 
 # Data files
 data/
+
+# Image files
+*.png
+*.jpg
