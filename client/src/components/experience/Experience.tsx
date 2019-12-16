@@ -15,7 +15,7 @@ type ExperienceProps = Array<{
 	website: string;
 	position: string;
 	date: string;
-	summary: string[];
+	location: string;
 }>;
 
 type Props = {
@@ -49,10 +49,10 @@ class Experience extends Component<Props> {
 									website: string;
 									position: string;
 									date: string;
-									summary: string[];
+									location: string;
 								},
 								index: number
-							) => <ExperienceSingle key={index} {...single} />
+							) => <ExperienceSingle key={index} {...single} index={index} />
 						)}
 						<div className='experience-path-line'>
 							<div className='experience-path-line-l' />

@@ -8,7 +8,7 @@
 .experience-path-line {
 	width: 100%;
 	display: grid;
-	grid-template-columns: 1fr 6.5fr;
+	grid-template-columns: 1fr 3.5fr;
 	grid-template-rows: auto;
 	grid-template-areas: "m l" "m r";
 }
@@ -41,7 +41,7 @@
 
 @media (min-width: 768px) {
 	.experience-path-line {
-		grid-template-columns: 10fr 1fr 10fr;
+		grid-template-columns: 3fr 1fr 3fr;
 		grid-template-rows: auto;
 		grid-template-areas: "l m r";
 	}

@@ -31,7 +31,7 @@ class AboutSkill extends Component<Props, State> {
 				key={index}
 			>
 				<div className='about-skill-single'>
-					<img className='about-skill-single-logo' src={logo} alt={name} title={name} />
+					<img className='about-skill-single-logo' src={logo} alt={name} />
 					<div className='about-skill-single-name'>{name}</div>
 				</div>
 			</div>
