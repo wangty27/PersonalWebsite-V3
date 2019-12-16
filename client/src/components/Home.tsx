@@ -30,43 +30,43 @@ class Home extends Component<Props> {
 	}
 
 	render() {
-		var typedStrings: string[] = [];
 		if (this.props.home) {
-			typedStrings = this.props.home;
-		}
-		return (
-			<section className='home-wrapper'>
-				<div className='home-mask'>
-					<VisibilitySensor onChange={this.onVisibilityChange.bind(this)} partialVisibility>
-						<div className='d-flex justify-content-center align-items-center flex-column h-100 w-100 text-white'>
-							<div className='home-title'>Hello World, I'm Terry Wang</div>
-							{this.state.isVisible ? (
-								<Typed
-									className='home-identity'
-									strings={typedStrings}
-									typeSpeed={70}
-									backSpeed={30}
-									backDelay={1500}
-									smartBackspace={false}
-									loop
-								/>
-							) : (
-								<div />
-							)}
+			return (
+				<section className='home-wrapper'>
+					<div className='home-mask'>
+						<VisibilitySensor onChange={this.onVisibilityChange.bind(this)} partialVisibility>
+							<div className='d-flex justify-content-center align-items-center flex-column h-100 w-100 text-white'>
+								<div className='home-title'>Hello World, I'm Terry Wang</div>
+								{this.state.isVisible ? (
+									<Typed
+										className='home-identity'
+										strings={this.props.home}
+										typeSpeed={70}
+										backSpeed={30}
+										backDelay={1500}
+										smartBackspace={false}
+										loop
+									/>
+								) : (
+									<div />
+								)}
 
-							<div
-								className='home-go-down'
-								onClick={() =>
-									this.scroller.scrollTo('about', {
-										duration: 1000,
-										smooth: 'easeInOutQuint'
-									})}
-							/>
-						</div>
-					</VisibilitySensor>
-				</div>
-			</section>
-		);
+								<div
+									className='home-go-down'
+									onClick={() =>
+										this.scroller.scrollTo('about', {
+											duration: 1000,
+											smooth: 'easeInOutQuint'
+										})}
+								/>
+							</div>
+						</VisibilitySensor>
+					</div>
+				</section>
+			);
+		} else {
+			return <div />;
+		}
 	}
 }
 
