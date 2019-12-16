@@ -4,9 +4,10 @@ import VisibilitySensor from 'react-visibility-sensor';
 import '../../css/about/aboutSkill.css';
 
 type Props = {
-	name: string;
-	confidence: number;
-	color: string;
+	skills: Array<{
+		name: string;
+		logo: string;
+	}>;
 };
 
 type State = {
@@ -22,22 +23,28 @@ class AboutSkill extends Component<Props, State> {
 		}
 	}
 
+	renderSingle(name: string, logo: string, index: number) {
+		return (
+			<div
+				className={this.state.init ? 'animated fadeInUp' : 'invisible'}
+				style={{ animationDelay: `${index * 25}ms` }}
+				key={index}
+			>
+				<div className='about-skill-single'>
+					<img className='about-skill-single-logo' src={logo} alt={name} title={name} />
+					<div className='about-skill-single-name'>{name}</div>
+				</div>
+			</div>
+		);
+	}
+
 	render() {
 		return (
 			<VisibilitySensor onChange={this.onVisibilityChange.bind(this)} partialVisibility>
-				<div className={this.state.init ? 'animated fadeInUp' : 'invisible'}>
-					<div className='skill-wrapper'>
-						<div className='skill-name-background' style={{ background: this.props.color }}>
-							<div className='skill-name-text'>{this.props.name}</div>
-						</div>
-						<div className='skill-confidence'>
-							<div
-								className='skill-confidence-bar'
-								style={{ background: this.props.color, width: `${this.props.confidence}%` }}
-							/>
-						</div>
-						<div className='skill-confidence-number'>{this.props.confidence}%</div>
-					</div>
+				<div className='about-skill-wrapper'>
+					{this.props.skills.map((skill: { name: string; logo: string }, index: number) =>
+						this.renderSingle(skill.name, skill.logo, index)
+					)}
 				</div>
 			</VisibilitySensor>
 		);

@@ -12,7 +12,7 @@ import AboutSkill from './AboutSkill';
 type AboutProps = {
 	description: string;
 	keywords: string[];
-	skills: Array<{ name: string; confidence: number; color: string }>;
+	skills: Array<{ name: string; logo: string }>;
 	resume: string;
 	portrait: string;
 };
@@ -55,11 +55,7 @@ class About extends Component<Props> {
 							</a>
 						</p>
 						<h5 style={{ marginBottom: '16px' }}>SKILLS</h5>
-						{this.props.about.skills.map(
-							(skill: { name: string; confidence: number; color: string }, index: number) => (
-								<AboutSkill key={index} {...skill} />
-							)
-						)}
+						<AboutSkill skills={this.props.about.skills} />
 					</Container>
 				</section>
 			);
