@@ -8,6 +8,7 @@ import Home from './Home';
 import About from './about/About';
 import Experience from './experience/Experience';
 import Projects from './projects/Projects';
+import Contact from './Contact';
 
 var Element = Scroll.Element;
 
@@ -30,8 +31,8 @@ class Main extends Component {
 				<Element id='projects' name='projects'>
 					<Projects />
 				</Element>
-				<Element id='contact' name='contact' style={{ height: '100vh', paddingTop: '100px' }}>
-					<h1 style={{ color: 'white' }}>contact</h1>
+				<Element id='contact' name='contact'>
+					<Contact />
 				</Element>
 				<ToTop />
 			</React.Fragment>

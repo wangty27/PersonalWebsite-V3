@@ -1,0 +1,114 @@
+.contact-wrapper {
+	width: 100%;
+	color: #e0e0e0;
+	background-image: url('/images/contact-background.jpg');
+	background-size: cover;
+	background-position: bottom;
+	background-repeat: no-repeat;
+}
+
+.contact-mask {
+	width: 100%;
+	background: rgba(0, 0, 0, 0.55);
+}
+
+.contact-content {
+	width: 100%;
+	padding-top: 90px;
+	padding-bottom: 150px;
+}
+
+.contact-methods {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	margin-bottom: 50px;
+}
+
+.contact-method-single {
+	height: 100%;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	transition: 300ms;
+	cursor: pointer;
+}
+
+.contact-method-single:hover {
+	-webkit-transform: scale(1.04, 1.04);
+	-moz-transform: scale(1.04, 1.04);
+	-ms-transform: scale(1.04, 1.04);
+	-o-transform: scale(1.04, 1.04);
+	transform: scale(1.04, 1.04);
+}
+
+.contact-method-icon {
+	font-size: 80px;
+	margin-bottom: 10px;
+}
+
+.contact-form {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	row-gap: 10px;
+	column-gap: 30px;
+}
+
+.contact-form-fields {
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+}
+
+.contact-form-input {
+	background: transparent;
+	padding: 10px 15px 10px 15px;
+	border: 1.5px solid #f8f9fa;
+	border-radius: 5px;
+	color: #fff;
+}
+
+.contact-form-input::placeholder,
+.contact-form-textarea::placeholder {
+	color: #dfdfdf;
+}
+
+.contact-form-textarea {
+	height: 100%;
+	min-height: 118px;
+	background: transparent;
+	padding: 10px 15px 10px 15px;
+	border: 1.5px solid #f8f9fa;
+	border-radius: 5px;
+	color: #fff;
+	resize: vertical;
+}
+
+.contact-form-submit {
+	background: transparent;
+	padding: 10px 15px 10px 15px;
+	border: 1.5px solid #f8f9fa;
+	border-radius: 5px;
+	color: #fff;
+	width: 250px;
+}
+
+.contact-form-submit:hover {
+	background: rgba(255, 255, 255, .2);
+}
+
+@media (min-width: 768px) {
+	.contact-methods {
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: auto;
+	}
+
+	.contact-form {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+	}
+}
