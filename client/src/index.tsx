@@ -5,9 +5,8 @@ import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'material-icons/iconfont/material-icons.css';
 import 'animate.css/animate.min.css';
-import './index.css';
+import '@fortawesome/fontawesome-free/css/all.css';
 
 import './index.css';
 import App from './components/App';

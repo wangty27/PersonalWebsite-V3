@@ -66,7 +66,6 @@ export default class NavBar extends Component {
 			this.experiencePos = document.getElementById('experience')!.offsetTop - 250;
 			this.projectsPos = document.getElementById('projects')!.offsetTop - 250;
 			this.contactPos = document.getElementById('contact')!.offsetTop - 250;
-			console.log(this.homePos, this.aboutPos, this.experiencePos, this.projectsPos, this.contactPos);
 			if (window.innerWidth > 768) {
 				this.setState({ isOpen: false });
 			}

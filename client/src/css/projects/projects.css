@@ -1,0 +1,31 @@
+.projects-wrapper {
+	width: 100%;
+	padding-top: 90px;
+	padding-bottom: 90px;
+	color: #e0e0e0;
+}
+
+.project-single-wrapper {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	gap: 30px;
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+	.project-single-wrapper {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (min-width: 992px) {
+	.project-single-wrapper {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+@media (min-width: 1200px) {
+}

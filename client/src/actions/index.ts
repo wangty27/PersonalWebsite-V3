@@ -30,3 +30,11 @@ export const fetchExperience: Function = () => (dispatch: Function) => {
 		}
 	});
 };
+
+export const fetchProjects: Function = () => (dispatch: Function) => {
+	axios.get(`${serverAddress}/api/projects`).then(response => {
+		if (response.status === 200) {
+			dispatch({ type: TYPES.FETCH_PROJECTS, payload: response.data });
+		}
+	});
+};

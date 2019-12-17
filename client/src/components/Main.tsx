@@ -7,6 +7,7 @@ import Gap from './Gap';
 import Home from './Home';
 import About from './about/About';
 import Experience from './experience/Experience';
+import Projects from './projects/Projects';
 
 var Element = Scroll.Element;
 
@@ -26,8 +27,8 @@ class Main extends Component {
 					<Experience />
 				</Element>
 				<Gap number={2} />
-				<Element id='projects' name='projects' style={{ height: '100vh', paddingTop: '100px' }}>
-					<h1 style={{ color: 'white' }}>projects</h1>
+				<Element id='projects' name='projects'>
+					<Projects />
 				</Element>
 				<Element id='contact' name='contact' style={{ height: '100vh', paddingTop: '100px' }}>
 					<h1 style={{ color: 'white' }}>contact</h1>

@@ -1,0 +1,55 @@
+.project-single-card {
+	min-height: 400px;
+	width: 100%;
+	perspective: 1000px;
+	background: transparent;
+	border: none;
+}
+
+.flipped {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+.disabled {
+	color: #f8f9fa;
+	background: transparent;
+	opacity: .5;
+	cursor: default;
+}
+
+.project-single-card-inner {
+	height: 100%;
+	width: 100%;
+	transition: 500ms;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	background: #303030;
+	box-shadow: 0 .2rem .5rem rgba(0, 0, 0, .15);
+}
+
+.project-single-card-buttons {
+	display: flex;
+	flex-direction: column;
+}
+
+.project-single-card-front {
+	height: 100%;
+	width: 100%;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.project-single-card-back {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	transform: rotateY(180deg);
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
