@@ -100,8 +100,7 @@ export default class NavBar extends Component {
 									smooth: 'easeInOutQuint'
 								})}
 						>
-							{/* TODO: remove server address */}
-							<img className='logo' src='http://localhost:1127/static/images/logo.png' alt='logo' />
+							<img className='logo' src='/icons/logo.png' alt='logo' />
 						</Navbar.Brand>
 						<Navbar.Toggle aria-controls='collapse-nav' />
 						<Navbar.Collapse id='collapse-nav'>
