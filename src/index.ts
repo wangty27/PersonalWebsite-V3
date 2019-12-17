@@ -1,9 +1,12 @@
 import * as express from 'express';
 import * as dotenv from 'dotenv';
 import * as path from 'path';
+import * as helmet from 'helmet';
 
 dotenv.config();
 const app = express();
+
+app.use(helmet());
 
 app.use('/static', express.static('static'));
 
@@ -25,10 +28,10 @@ aboutRoutes(app);
 import experienceRoutes from './routes/experienceRoutes';
 experienceRoutes(app);
 
-var FRONT_END_PATH: string = path.resolve(__dirname, 'client', 'build');
-if (process.env.NODE_ENV !== 'production') {
-	FRONT_END_PATH = path.resolve(__dirname, '..', 'client', 'build');
-}
+import projectsRoutes from './routes/projectsRoutes';
+projectsRoutes(app);
+
+const FRONT_END_PATH: string = path.resolve(__dirname, '..', 'client', 'build');
 
 app.use(express.static(FRONT_END_PATH));
 app.get('*', (req, res) => {

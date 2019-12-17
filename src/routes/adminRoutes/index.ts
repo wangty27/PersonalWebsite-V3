@@ -5,6 +5,7 @@ const dataFileDir: string = join(__dirname, '..', '..', 'data');
 const homeDataFilePath: string = join(__dirname, '..', '..', 'data', 'home.json');
 const aboutDataFilePath: string = join(__dirname, '..', '..', 'data', 'about.json');
 const experienceDataFilePath: string = join(__dirname, '..', '..', 'data', 'experience.json');
+const projectsDataFilePath: string = join(__dirname, '..', '..', 'data', 'projects.json');
 
 fs.access(dataFileDir, fs.constants.F_OK, err => {
 	if (err) {
@@ -46,6 +47,16 @@ fs.access(aboutDataFilePath, fs.constants.F_OK, err => {
 fs.access(experienceDataFilePath, fs.constants.F_OK, err => {
 	if (err) {
 		fs.writeFile(experienceDataFilePath, '[]', err => {
+			if (err) {
+				throw err;
+			}
+		});
+	}
+});
+
+fs.access(projectsDataFilePath, fs.constants.F_OK, err => {
+	if (err) {
+		fs.writeFile(projectsDataFilePath, '[]', err => {
 			if (err) {
 				throw err;
 			}
