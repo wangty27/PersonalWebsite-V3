@@ -65,8 +65,8 @@
 }
 
 .experience-single-path-logo-img {
-	height: 70px;
-	width: 70px;
+	height: 60px;
+	width: 60px;
 	border-radius: 50%;
 	border: 3px solid #ffd54f;
 }
@@ -98,6 +98,13 @@
 
 .experience-single-info-date {
 	font-size: 13px;
+}
+
+@media (min-width: 375px) {
+	.experience-single-path-logo-img {
+		height: 70px;
+		width: 70px;
+	}
 }
 
 @media (min-width: 768px) {
