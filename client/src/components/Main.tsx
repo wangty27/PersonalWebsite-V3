@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Scroll from 'react-scroll';
 
+import LoadingMask from './LoadingMask';
 import NavBar from './NavBar';
 import ToTop from './ToTop';
 import Gap from './Gap';
@@ -12,27 +14,69 @@ import Contact from './Contact';
 
 var Element = Scroll.Element;
 
-class Main extends Component {
+type Props = {
+	home: any;
+	about: any;
+	experience: any;
+	projects: any;
+	contact: any;
+};
+
+type State = {
+	homeLoaded: boolean;
+	aboutLoaded: boolean;
+	experienceLoaded: boolean;
+	projectsLoaded: boolean;
+	contactLoaded: boolean;
+	loaded: boolean;
+};
+
+class Main extends Component<Props, State> {
+	state = {
+		homeLoaded: false,
+		aboutLoaded: false,
+		experienceLoaded: false,
+		projectsLoaded: false,
+		contactLoaded: false,
+		loaded: false
+	};
+
+	componentDidUpdate() {
+		const { home, about, experience, projects, contact } = this.props;
+		if (!this.state.loaded && home && about && experience && projects && contact) {
+			this.setState({ loaded: true });
+		}
+	}
+
+	childLoaded(name: string) {
+		console.log(`${name} loaded`);
+		let stateKey = `${name}Loaded`;
+		let newState = {};
+		newState[stateKey] = true;
+		this.setState(newState);
+	}
+
 	render() {
 		return (
 			<React.Fragment>
+				<LoadingMask className={this.state.loaded ? 'hide' : ''} />
 				<NavBar />
 				<Element id='home' name='home'>
-					<Home />
+					<Home childLoaded={this.childLoaded.bind(this)} />
 				</Element>
 				<Element id='about' name='about'>
-					<About />
+					<About childLoaded={this.childLoaded.bind(this)} />
 				</Element>
 				<Gap number={1} />
 				<Element id='experience' name='experience'>
-					<Experience />
+					<Experience childLoaded={this.childLoaded.bind(this)} />
 				</Element>
 				<Gap number={2} />
 				<Element id='projects' name='projects'>
-					<Projects />
+					<Projects childLoaded={this.childLoaded.bind(this)} />
 				</Element>
 				<Element id='contact' name='contact'>
-					<Contact />
+					<Contact childLoaded={this.childLoaded.bind(this)} />
 				</Element>
 				<ToTop />
 			</React.Fragment>
@@ -40,4 +84,9 @@ class Main extends Component {
 	}
 }
 
-export default Main;
+function mapStateToProps(state: any) {
+	const { home, about, experience, projects, contact } = state;
+	return { home, about, experience, projects, contact };
+}
+
+export default connect(mapStateToProps)(Main);

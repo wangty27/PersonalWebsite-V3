@@ -38,3 +38,24 @@ export const fetchProjects: Function = () => (dispatch: Function) => {
 		}
 	});
 };
+
+export const fetchContact: Function = () => (dispatch: Function) => {
+	axios.get(`${serverAddress}/api/contact`).then(response => {
+		if (response.status === 200) {
+			dispatch({ type: TYPES.FETCH_CONTACT, payload: response.data });
+		}
+	});
+};
+
+export const sendContactMessage: Function = (name: string, email: string, message: string) => (dispatch: Function) => {
+	axios.post(`${serverAddress}/api/contact/message`, { name, email, message }).then(response => {
+		if (response.status === 200) {
+			dispatch({ type: TYPES.SEND_CONTACT_MESSAGE, payload: response.data });
+		}
+	});
+};
+
+export const resetContactMessage: Function = () => ({
+	type: TYPES.SEND_CONTACT_MESSAGE,
+	payload: { reset: true }
+});
