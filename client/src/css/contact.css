@@ -97,6 +97,15 @@
 	width: 250px;
 }
 
+.contact-form-submit:disabled {
+	cursor: default;
+	opacity: .8;
+}
+
+.contact-form-submit:disabled:hover {
+	background: transparent;
+}
+
 .contact-form-submit:hover {
 	background: rgba(255, 255, 255, .2);
 }
