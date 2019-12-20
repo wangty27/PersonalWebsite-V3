@@ -112,3 +112,5 @@ data/
 # Image files
 *.png
 *.jpg
+images/
+icons/

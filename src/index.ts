@@ -2,11 +2,14 @@ import * as express from 'express';
 import * as dotenv from 'dotenv';
 import * as path from 'path';
 import * as helmet from 'helmet';
+import * as bodyParser from 'body-parser';
 
 dotenv.config();
 const app = express();
 
 app.use(helmet());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/static', express.static('static'));
 
@@ -30,6 +33,9 @@ experienceRoutes(app);
 
 import projectsRoutes from './routes/projectsRoutes';
 projectsRoutes(app);
+
+import contactRoutes from './routes/contactRoutes';
+contactRoutes(app);
 
 const FRONT_END_PATH: string = path.resolve(__dirname, '..', 'client', 'build');
 
