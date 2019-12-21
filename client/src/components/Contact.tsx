@@ -172,31 +172,22 @@ class Contact extends Component<Props, State> {
 							<SectionTitle>Contact</SectionTitle>
 							<div className='contact-methods'>
 								<div className='d-flex flex-column justify-content-center align-items-center'>
-									<div
-										className='contact-method-single mb-5 mb-md-0'
-										onClick={() => (window.location.href = `mailto:${this.props.contact.email}`)}
-									>
+									<a className='contact-method-single mb-5 mb-md-0' href={`mailto:${this.props.contact.email}`}>
 										<i className='fas fa-envelope contact-method-icon' />
 										<div className='font-weight-bold'>Email</div>
-									</div>
+									</a>
 								</div>
 								<div className='d-flex flex-column justify-content-center align-items-center'>
-									<div
-										className='contact-method-single mb-5 mb-md-0'
-										onClick={() => (window.location.href = this.props.contact.github)}
-									>
+									<a className='contact-method-single mb-5 mb-md-0' href={this.props.contact.github}>
 										<i className='fab fa-github contact-method-icon' />
 										<div className='font-weight-bold'>GitHub</div>
-									</div>
+									</a>
 								</div>
 								<div className='d-flex flex-column justify-content-center align-items-center'>
-									<div
-										className='contact-method-single'
-										onClick={() => (window.location.href = this.props.contact.linkedin)}
-									>
+									<a className='contact-method-single' href={this.props.contact.linkedin}>
 										<i className='fab fa-linkedin contact-method-icon' />
 										<div className='font-weight-bold'>LinkedIn</div>
-									</div>
+									</a>
 								</div>
 							</div>
 							{this.renderContactForm()}

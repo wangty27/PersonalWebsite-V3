@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import VisibilitySensor from 'react-visibility-sensor';
 
 import '../../css/projects/projectsSingle.css';
@@ -41,21 +41,13 @@ class ProjectsSingle extends Component<Props, State> {
 								<Card.Text className='text-center'>{this.props.tech}</Card.Text>
 							</Card.Body>
 							<Card.Body className='pt-0 pb-0'>
-								<Button
-									className='w-100 mb-2'
-									variant='outline-light'
-									onClick={() => (window.location.href = this.props.github)}
-								>
+								<a className='w-100 mb-2 btn btn-outline-light' href={this.props.github}>
 									<i className='fab fa-github mr-2' />GitHub
-								</Button>
+								</a>
 								{this.props.live ? (
-									<Button
-										className='w-100'
-										variant='outline-light'
-										onClick={() => (window.location.href = this.props.live)}
-									>
+									<a className='w-100 btn btn-outline-light' href={this.props.live}>
 										<i className='fas fa-globe-americas mr-2' />Live
-									</Button>
+									</a>
 								) : (
 									''
 								)}
