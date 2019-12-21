@@ -11,6 +11,7 @@
 		"build": "npm run build-server && npm run build-client",
 		"build-client": "rimraf build/client && npm run build --prefix client && copyfiles client/build/** build/",
 		"build-server": "tsc -p .",
+		"pm2": "NODE_ENV=production pm2 start build/src/index.js --name tianyu.wang",
 		"clean": "gts clean",
 		"check": "gts check",
 		"fix": "gts fix"
@@ -19,9 +20,7 @@
 		"type": "git",
 		"url": "git+https://github.com/wtyanan/PersonalWebsite-V3.git"
 	},
-	"keywords": [
-		"Personal Website"
-	],
+	"keywords": [ "Personal Website" ],
 	"author": "Terry Wang",
 	"license": "Apache-2.0",
 	"licenses": [
