@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Main from './Main';
+import Admin from './Admin';
 import NotFound404 from './NotFound404';
-
-const Admin = () => <div>Admin</div>;
 
 class App extends Component {
 	render() {
