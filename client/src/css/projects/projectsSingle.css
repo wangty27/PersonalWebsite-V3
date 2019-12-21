@@ -1,17 +1,18 @@
 .project-single-card {
 	min-height: 400px;
 	width: 100%;
+	-webkit-perspective: 1000px;
 	perspective: 1000px;
 	background: transparent;
 	border: none;
 }
 
 .flipped {
-	-webkit-transform: rotateY(180deg);
-	-moz-transform: rotateY(180deg);
-	-ms-transform: rotateY(180deg);
-	-o-transform: rotateY(180deg);
-	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg) translate3d(0px, 0px, 0px);
+	-moz-transform: rotateY(180deg) translate3d(0px, 0px, 0px);
+	-ms-transform: rotateY(180deg) translate3d(0px, 0px, 0px);
+	-o-transform: rotateY(180deg) translate3d(0px, 0px, 0px);
+	transform: rotateY(180deg) translate3d(0px, 0px, 0px);
 }
 
 .disabled {
@@ -39,17 +40,48 @@
 .project-single-card-front {
 	height: 100%;
 	width: 100%;
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-	backface-visibility: hidden;
+	background: #303030;
 }
 
 .project-single-card-back {
 	height: 100%;
 	width: 100%;
-	position: absolute;
-	transform: rotateY(180deg);
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-	backface-visibility: hidden;
+	background: #303030;
+}
+
+.hide-on-mobile {
+	display: none;
+}
+
+@media (min-width: 768px) {
+	.hide-on-mobile {
+		display: block;
+	}
+
+	/* .project-single-card-front {
+		height: 100%;
+		width: 100%;
+		-webkit-transform: rotateY(0deg) translate3d(0px, 0px, 0px);
+		-moz-transform: rotateY(0deg) translate3d(0px, 0px, 0px);
+		-ms-transform: rotateY(0deg) translate3d(0px, 0px, 0px);
+		-o-transform: rotateY(0deg) translate3d(0px, 0px, 0px);
+		transform: rotateY(0deg) translate3d(0px, 0px, 0px);
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+
+	.project-single-card-back {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		-webkit-transform: rotateY(180deg) translate3d(0px, 0px, 0px);
+		-moz-transform: rotateY(180deg) translate3d(0px, 0px, 0px);
+		-ms-transform: rotateY(180deg) translate3d(0px, 0px, 0px);
+		-o-transform: rotateY(180deg) translate3d(0px, 0px, 0px);
+		transform: rotateY(180deg) translate3d(0px, 0px, 0px);
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		backface-visibility: hidden;
+	} */
 }

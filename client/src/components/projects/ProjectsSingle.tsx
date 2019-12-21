@@ -52,30 +52,32 @@ class ProjectsSingle extends Component<Props, State> {
 									''
 								)}
 							</Card.Body>
-							<Card.Body
+							{/* <Card.Body
+								className='hide-on-mobile'
 								style={{ flex: '0 1 auto', cursor: 'pointer' }}
 								onClick={() => this.setState({ flipped: !this.state.flipped })}
 							>
 								<small className='w-100 d-flex justify-content-center align-items-center'>
 									<i className='fas fa-redo mr-2' /> Click for details
 								</small>
-							</Card.Body>
+							</Card.Body> */}
 						</div>
 						<div className='project-single-card-back d-flex flex-column'>
-							<Card.Body className=''>
-								<Card.Title className='text-center text-white'>
+							<Card.Body>
+								{/* <Card.Title className='text-center text-white hide-on-mobile'>
 									<h4>{this.props.name}</h4>
-								</Card.Title>
+								</Card.Title> */}
 								<Card.Text>{this.props.summary}</Card.Text>
 							</Card.Body>
-							<Card.Body
+							{/* <Card.Body
+								className='hide-on-mobile'
 								style={{ flex: '0 1 auto', cursor: 'pointer' }}
 								onClick={() => this.setState({ flipped: !this.state.flipped })}
 							>
 								<small className='w-100 d-flex justify-content-center align-items-center'>
 									<i className='fas fa-redo flipped mr-2' /> Back
 								</small>
-							</Card.Body>
+							</Card.Body> */}
 						</div>
 					</Card>
 				</div>
