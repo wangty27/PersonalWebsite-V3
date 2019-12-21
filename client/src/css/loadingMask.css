@@ -54,7 +54,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transition: 300ms;
+	transition: 500ms;
 }
 
 .loading-pic {
@@ -66,6 +66,6 @@
 	animation: loadAnimation 1.5s infinite;
 }
 
-.hide {
+.fadeOut {
 	opacity: 0;
 }

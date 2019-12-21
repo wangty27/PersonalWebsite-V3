@@ -29,6 +29,8 @@ type State = {
 	projectsLoaded: boolean;
 	contactLoaded: boolean;
 	loaded: boolean;
+	hideLoading: boolean;
+	loadingClassNames: string;
 };
 
 class Main extends Component<Props, State> {
@@ -38,13 +40,19 @@ class Main extends Component<Props, State> {
 		experienceLoaded: false,
 		projectsLoaded: false,
 		contactLoaded: false,
-		loaded: false
+		loaded: false,
+		hideLoading: false,
+		loadingClassNames: ''
 	};
 
 	componentDidUpdate() {
 		const { home, about, experience, projects, contact } = this.props;
 		if (!this.state.loaded && home && about && experience && projects && contact) {
 			this.setState({ loaded: true });
+			this.setState({ loadingClassNames: 'fadeOut' });
+			setTimeout(() => {
+				this.setState({ hideLoading: true });
+			}, 500);
 		}
 	}
 
@@ -56,10 +64,12 @@ class Main extends Component<Props, State> {
 		this.setState(newState);
 	}
 
+	loadingFadeOut() {}
+
 	render() {
 		return (
 			<React.Fragment>
-				<LoadingMask className={this.state.loaded ? 'hide' : ''} />
+				{this.state.hideLoading ? '' : <LoadingMask className={this.state.loadingClassNames} />}
 				<NavBar />
 				<Element id='home' name='home'>
 					<Home childLoaded={this.childLoaded.bind(this)} />
