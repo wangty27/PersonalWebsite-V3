@@ -11,7 +11,7 @@ app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/static', express.static('static'));
+app.use('/assets', express.static('assets'));
 
 if (process.env.NODE_ENV !== 'production') {
 	console.log('In development, using cors');
