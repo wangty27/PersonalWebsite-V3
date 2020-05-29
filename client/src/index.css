@@ -16,6 +16,18 @@ body {
 	animation-fill-mode: backwards;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #232323;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffd54f;
+}
+
 h1 {
 	font-size: 40px;
 }

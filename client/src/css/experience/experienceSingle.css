@@ -138,22 +138,6 @@
 		margin-top: 75px;
 		margin-bottom: 75px;
 	}
-
-	.experience-single-info-position {
-		font-size: 21px;
-	}
-
-	.experience-single-info-company {
-		font-size: 15px;
-	}
-
-	.experience-single-info-location {
-		font-size: 15px;
-	}
-
-	.experience-single-info-date {
-		font-size: 15px;
-	}
 }
 
 @media (min-width: 992px) {
@@ -173,7 +157,7 @@
 	}
 
 	.experience-single-info-position {
-		font-size: 25px;
+		font-size: 21px;
 	}
 
 	.experience-single-info-company {
@@ -196,7 +180,7 @@
 	}
 
 	.experience-single-info-position {
-		font-size: 30px;
+		font-size: 25px;
 	}
 
 	.experience-single-info-company {

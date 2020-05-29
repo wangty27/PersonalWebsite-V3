@@ -48,12 +48,11 @@ class About extends Component<Props> {
 						<p className='about-description'>{this.props.about.description}</p>
 						<p>I describe myself as a:</p>
 						{this.props.about.keywords.map((words: string, index: number) => this.renderKeywords(words, index))}
-						<p style={{ color: '#fff' }}>
-							Check out{' '}
+						<div className="d-flex justify-content-center align-items-center mb-3">
 							<a href={this.props.about.resume} className='about-resume'>
-								my resume
+								Check out my resume
 							</a>
-						</p>
+						</div>
 						<h5 style={{ marginBottom: '16px' }}>SKILLS</h5>
 						<AboutSkill skills={this.props.about.skills} />
 					</Container>
