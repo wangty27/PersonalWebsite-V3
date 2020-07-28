@@ -17,7 +17,7 @@ type State = {
 	isVisible: boolean;
 };
 
-class Home extends Component<Props> {
+class Home extends Component<Props, State> {
 	state = { isVisible: false };
 	scroller = Scroll.scroller;
 
